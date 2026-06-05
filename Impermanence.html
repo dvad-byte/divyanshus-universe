@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Impermanence — Fredrick Lopez</title>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --ink: #1a1714;
+      --ink-muted: #5a5550;
+      --ink-faint: #9a948e;
+      --parchment: #f7f4ef;
+      --rule: rgba(26,23,20,0.12);
+    }
+
+    body {
+      background: var(--parchment);
+      color: var(--ink);
+      font-family: 'EB Garamond', Georgia, serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 0 1.5rem;
+    }
+
+    .page {
+      max-width: 640px;
+      width: 100%;
+      padding: 7rem 0 8rem;
+    }
+
+    .epigraph {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 0.875rem;
+      color: var(--ink-faint);
+      letter-spacing: 0.04em;
+      margin-bottom: 5rem;
+      text-align: center;
+    }
+
+    h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: clamp(2.4rem, 6vw, 3.5rem);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--ink);
+      text-align: center;
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+
+    .rule {
+      display: block;
+      width: 2.5rem;
+      height: 1px;
+      background: var(--ink);
+      margin: 1.4rem auto 5rem;
+      opacity: 0.35;
+    }
+
+    .stanza {
+      margin-bottom: 3.5rem;
+    }
+
+    .stanza-label {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 0.8rem;
+      letter-spacing: 0.12em;
+      color: var(--ink-faint);
+      text-transform: lowercase;
+      margin-bottom: 1.1rem;
+      display: block;
+    }
+
+    .poem-line {
+      font-size: clamp(1.05rem, 2.5vw, 1.2rem);
+      line-height: 1.9;
+      color: var(--ink);
+      display: block;
+    }
+
+    .poem-line.indent {
+      padding-left: clamp(2rem, 8vw, 5rem);
+      color: var(--ink-muted);
+      font-style: italic;
+    }
+
+    .coda {
+      margin-top: 4rem;
+      padding-top: 3.5rem;
+      border-top: 1px solid var(--rule);
+    }
+
+    .coda .poem-line {
+      font-size: clamp(1.1rem, 3vw, 1.35rem);
+      color: var(--ink);
+      font-weight: 500;
+    }
+
+    .colophon {
+      margin-top: 6rem;
+      text-align: center;
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 0.8rem;
+      letter-spacing: 0.1em;
+      color: var(--ink-faint);
+    }
+
+    .colophon span {
+      display: block;
+      margin-top: 0.3rem;
+      font-style: normal;
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+
+    @keyframes fadein {
+      from { opacity: 0; transform: translateY(14px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .page > * {
+      animation: fadein 0.9s ease both;
+    }
+
+    h1       { animation-delay: 0.1s; }
+    .rule    { animation-delay: 0.2s; }
+    .stanza  { animation-delay: 0.3s; }
+    .stanza + .stanza { animation-delay: 0.45s; }
+    .stanza + .stanza + .stanza { animation-delay: 0.6s; }
+    .coda    { animation-delay: 0.75s; }
+    .colophon { animation-delay: 0.9s; }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --ink: #e8e3dc;
+        --ink-muted: #a09890;
+        --ink-faint: #6a6460;
+        --parchment: #111009;
+        --rule: rgba(232,227,220,0.1);
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+
+    <p class="epigraph">Fredrick Lopez</p>
+
+    <h1>Impermanence</h1>
+    <span class="rule"></span>
+
+    <div class="stanza">
+      <span class="stanza-label">morning</span>
+      <span class="poem-line">Sipped my coffee, joy came, then it passed.</span>
+      <span class="poem-line">Went into meditation, peace came, sat for a while, then melted.</span>
+      <span class="poem-line">Cooked a meal, came flow, carried me, then halted.</span>
+      <span class="poem-line">Ate the delight, rushed in pleasure, rocketed me to peak, then sat down.</span>
+      <span class="poem-line">Opened a book, came in the author's thoughts, amused and enlightened,</span>
+      <span class="poem-line indent">left with the closing.</span>
+    </div>
+
+    <div class="stanza">
+      <span class="poem-line">Worked for the man, entered exploitation &amp; insult, then dissolved.</span>
+      <span class="poem-line">Crossed oceans, came in the beautiful states, continent swirled</span>
+      <span class="poem-line indent">in me, then changed back.</span>
+      <span class="poem-line">Entered the heart of the woman, purified and absorbed,</span>
+      <span class="poem-line indent">then faded presence.</span>
+    </div>
+
+    <div class="coda">
+      <span class="poem-line">Opened my eyes, lived, then closed them.</span>
+    </div>
+
+    <p class="colophon">
+      — Fredrick Lopez
+      <span>2026</span>
+    </p>
+
+  </main>
+</body>
+</html>
