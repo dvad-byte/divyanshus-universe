@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>A Walk Alongside Attention — Fredrick Lopez</title>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --ink: #1a1714;
+      --ink-muted: #5a5550;
+      --ink-faint: #9a948e;
+      --parchment: #f7f4ef;
+      --rule: rgba(26,23,20,0.12);
+    }
+
+    body {
+      background: var(--parchment);
+      color: var(--ink);
+      font-family: 'EB Garamond', Georgia, serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 0 1.5rem;
+    }
+
+    .page {
+      max-width: 640px;
+      width: 100%;
+      padding: 7rem 0 8rem;
+    }
+
+    .epigraph {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 0.875rem;
+      color: var(--ink-faint);
+      letter-spacing: 0.04em;
+      margin-bottom: 5rem;
+      text-align: center;
+    }
+
+    h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: clamp(1.8rem, 5vw, 2.8rem);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--ink);
+      text-align: center;
+      line-height: 1.15;
+      margin-bottom: 0.5rem;
+    }
+
+    .rule {
+      display: block;
+      width: 2.5rem;
+      height: 1px;
+      background: var(--ink);
+      margin: 1.4rem auto 5rem;
+      opacity: 0.35;
+    }
+
+    .stanza {
+      margin-bottom: 2.8rem;
+      font-size: clamp(1.05rem, 2.5vw, 1.2rem);
+      line-height: 2;
+      color: var(--ink);
+    }
+
+    .colophon {
+      margin-top: 6rem;
+      text-align: center;
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 0.8rem;
+      letter-spacing: 0.1em;
+      color: var(--ink-faint);
+    }
+
+    .colophon span {
+      display: block;
+      margin-top: 0.3rem;
+      font-style: normal;
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+
+    .back {
+      display: inline-block;
+      margin-bottom: 4rem;
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 0.85rem;
+      color: var(--ink-faint);
+      text-decoration: none;
+      letter-spacing: 0.05em;
+      transition: color 0.2s;
+    }
+
+    .back:hover { color: var(--ink); }
+
+    @keyframes fadein {
+      from { opacity: 0; transform: translateY(14px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .page > * {
+      animation: fadein 0.9s ease both;
+    }
+
+    h1          { animation-delay: 0.1s; }
+    .rule       { animation-delay: 0.2s; }
+    .stanza:nth-child(3) { animation-delay: 0.3s; }
+    .stanza:nth-child(4) { animation-delay: 0.38s; }
+    .stanza:nth-child(5) { animation-delay: 0.46s; }
+    .stanza:nth-child(6) { animation-delay: 0.54s; }
+    .stanza:nth-child(7) { animation-delay: 0.62s; }
+    .stanza:nth-child(8) { animation-delay: 0.70s; }
+    .colophon   { animation-delay: 0.85s; }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --ink: #e8e3dc;
+        --ink-muted: #a09890;
+        --ink-faint: #6a6460;
+        --parchment: #111009;
+        --rule: rgba(232,227,220,0.1);
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+
+    <p class="epigraph">Fredrick Lopez</p>
+
+    <h1>A Walk Alongside Attention</h1>
+    <span class="rule"></span>
+
+    <div class="stanza">
+      Attention woke up into the absurd, cheered at the opportunity
+      of experience and felt grateful for another instance to move.
+    </div>
+
+    <div class="stanza">
+      With great love, with its eyes closed, attention started walking
+      and met the expanse of divinity. With reverent love,
+      it bowed down and rejoiced in the presence of the totality.
+    </div>
+
+    <div class="stanza">
+      Walking further, it opened its eyes and brought itself to
+      the canvas of the paper. Poured and poured and it
+      poured with great care and dissolution, all of itself
+      into the paper.
+    </div>
+
+    <div class="stanza">
+      Then came in its way the music and the waters of the shower.
+      And dissolved it was again, carried into the rejoice of the music,
+      warm in the embrace of the waters.
+    </div>
+
+    <div class="stanza">
+      Came then in its way the lady crying of deep injustice,
+      dissolved it again into loving compassion, and again
+      it poured into action of speech, material and thought.
+    </div>
+
+    <div class="stanza">
+      Came its way the mundanity of labor. With complete openness,
+      embraced it in its utter ordinariness, like hugging an old outgrown friend.
+      Came its way realizations of the cosmos, when he bowed to the grace of the reveal.
+      Then slowly closed its eyes and merged into divinity again.
+    </div>
+
+    <p class="colophon">
+      — Fredrick Lopez
+      <span>2026</span>
+    </p>
+
+  </main>
+</body>
+</html>
