@@ -31,6 +31,11 @@
 
     body {
       background-color: var(--bg);
+      background-image: url('bg.jpg');
+      background-size: cover;
+      background-position: center 30%;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
       color: var(--white);
       font-family: 'Inter', sans-serif;
       font-weight: 300;
@@ -42,42 +47,23 @@
       overflow-x: hidden;
     }
 
-    /* Radial glow — awareness at center */
+    /* Dark overlay for readability */
     body::before {
       content: '';
       position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 800px;
-      height: 800px;
-      background: radial-gradient(ellipse at center,
-        rgba(201, 168, 76, 0.055) 0%,
-        rgba(201, 168, 76, 0.015) 40%,
-        transparent 70%
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(10, 10, 18, 0.52) 0%,
+        rgba(10, 10, 18, 0.38) 40%,
+        rgba(10, 10, 18, 0.68) 100%
       );
       pointer-events: none;
       z-index: 0;
     }
 
-    /* Subtle star field */
     body::after {
-      content: '';
-      position: fixed;
-      inset: 0;
-      background-image:
-        radial-gradient(1px 1px at 15% 22%, rgba(255,255,255,0.18) 0%, transparent 100%),
-        radial-gradient(1px 1px at 72% 8%,  rgba(255,255,255,0.12) 0%, transparent 100%),
-        radial-gradient(1px 1px at 88% 61%, rgba(255,255,255,0.10) 0%, transparent 100%),
-        radial-gradient(1px 1px at 33% 79%, rgba(255,255,255,0.14) 0%, transparent 100%),
-        radial-gradient(1px 1px at 55% 42%, rgba(255,255,255,0.08) 0%, transparent 100%),
-        radial-gradient(1px 1px at 6%  55%, rgba(255,255,255,0.10) 0%, transparent 100%),
-        radial-gradient(1px 1px at 91% 33%, rgba(255,255,255,0.09) 0%, transparent 100%),
-        radial-gradient(1px 1px at 47% 91%, rgba(255,255,255,0.11) 0%, transparent 100%),
-        radial-gradient(1px 1px at 22% 47%, rgba(255,255,255,0.07) 0%, transparent 100%),
-        radial-gradient(1px 1px at 64% 70%, rgba(255,255,255,0.13) 0%, transparent 100%);
-      pointer-events: none;
-      z-index: 0;
+      display: none;
     }
 
     .container {
@@ -235,7 +221,7 @@
   <div class="container">
     <h1>Divyanshu's Universe</h1>
 
-    <p class="tagline">The Universe Experiencing Itself! (literally)</p>
+    <p class="tagline">Universe Experiencing Itself</p>
 
     <div class="divider"></div>
 
@@ -243,7 +229,7 @@
       <ul>
         <li><a href="physics.html">Physics</a></li>
         <li><a href="humanities.html">Humanities</a></li>
-        <li><a href="writing.html">Writing</a></li>
+        <li><a href="literature.html">Writing</a></li>
         <li><a href="spirituality.html">Spirituality</a></li>
         <li><a href="art.html">Art</a></li>
         <li><a href="teaching.html">Teaching</a></li>
