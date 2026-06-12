@@ -47,16 +47,17 @@
       overflow-x: hidden;
     }
 
-    /* Dark overlay for readability */
+    /* Overlay — stronger in the middle band where text sits */
     body::before {
       content: '';
       position: fixed;
       inset: 0;
       background: linear-gradient(
         to bottom,
-        rgba(10, 10, 18, 0.52) 0%,
-        rgba(10, 10, 18, 0.38) 40%,
-        rgba(10, 10, 18, 0.68) 100%
+        rgba(8, 8, 16, 0.35) 0%,
+        rgba(8, 8, 16, 0.55) 35%,
+        rgba(8, 8, 16, 0.62) 55%,
+        rgba(8, 8, 16, 0.72) 100%
       );
       pointer-events: none;
       z-index: 0;
@@ -73,6 +74,8 @@
       padding: 4rem 2rem;
       max-width: 680px;
       width: 100%;
+      /* Push content down so it centres on the sun-to-figure axis (~55% down) */
+      margin-top: 10vh;
     }
 
     /* Eyebrow */
@@ -94,8 +97,9 @@
       font-size: clamp(2.4rem, 6vw, 3.8rem);
       font-weight: 400;
       line-height: 1.15;
-      color: var(--white);
+      color: #ffffff;
       letter-spacing: -0.01em;
+      text-shadow: 0 2px 24px rgba(0,0,0,0.6), 0 1px 4px rgba(0,0,0,0.5);
       opacity: 0;
       animation: fadeUp 1s ease forwards 0.45s;
     }
@@ -105,9 +109,10 @@
       font-family: 'Inter', sans-serif;
       font-style: italic;
       font-size: clamp(0.95rem, 2.2vw, 1.15rem);
-      color: var(--gold);
+      color: #e8c86a;
       margin-top: 0.9rem;
       letter-spacing: 0.01em;
+      text-shadow: 0 1px 12px rgba(0,0,0,0.7);
       opacity: 0;
       animation: fadeUp 1s ease forwards 0.7s;
     }
@@ -143,10 +148,11 @@
       font-weight: 400;
       letter-spacing: 0.12em;
       text-transform: uppercase;
-      color: var(--muted);
+      color: rgba(232, 228, 220, 0.85);
       text-decoration: none;
       padding: 0.55rem 1.2rem;
       position: relative;
+      text-shadow: 0 1px 8px rgba(0,0,0,0.8);
       transition: color 0.5s ease, letter-spacing 0.5s ease;
     }
 
