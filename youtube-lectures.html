@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>YouTube Lectures — Divyanshu's Universe</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&family=Inter:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:       #0d0d14;
+      --gold:     #c9a84c;
+      --gold-dim: #7a6130;
+      --white:    #e8e4dc;
+      --muted:    #6b6878;
+    }
+
+    html, body { min-height: 100%; }
+
+    body {
+      background-color: var(--bg);
+      color: var(--white);
+      font-family: 'Inter', sans-serif;
+      font-weight: 300;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      overflow-x: hidden;
+      padding: 5rem 2rem 6rem;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 800px; height: 800px;
+      background: radial-gradient(ellipse at center,
+        rgba(201, 168, 76, 0.055) 0%,
+        rgba(201, 168, 76, 0.015) 40%,
+        transparent 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        radial-gradient(1px 1px at 15% 22%, rgba(255,255,255,0.18) 0%, transparent 100%),
+        radial-gradient(1px 1px at 72% 8%,  rgba(255,255,255,0.12) 0%, transparent 100%),
+        radial-gradient(1px 1px at 88% 61%, rgba(255,255,255,0.10) 0%, transparent 100%),
+        radial-gradient(1px 1px at 33% 79%, rgba(255,255,255,0.14) 0%, transparent 100%),
+        radial-gradient(1px 1px at 55% 42%, rgba(255,255,255,0.08) 0%, transparent 100%),
+        radial-gradient(1px 1px at 6%  55%, rgba(255,255,255,0.10) 0%, transparent 100%),
+        radial-gradient(1px 1px at 91% 33%, rgba(255,255,255,0.09) 0%, transparent 100%),
+        radial-gradient(1px 1px at 47% 91%, rgba(255,255,255,0.11) 0%, transparent 100%),
+        radial-gradient(1px 1px at 22% 47%, rgba(255,255,255,0.07) 0%, transparent 100%),
+        radial-gradient(1px 1px at 64% 70%, rgba(255,255,255,0.13) 0%, transparent 100%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .container {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      max-width: 620px;
+    }
+
+    .back {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.72rem;
+      font-weight: 400;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold-dim);
+      text-decoration: none;
+      margin-bottom: 3.5rem;
+      transition: color 0.4s ease;
+      opacity: 0;
+      animation: fadeUp 0.8s ease forwards 0.1s;
+    }
+    .back:hover { color: var(--gold); }
+    .back::before { content: '←'; font-size: 0.85rem; }
+
+    h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 400;
+      color: var(--white);
+      letter-spacing: -0.01em;
+      line-height: 1.15;
+      opacity: 0;
+      animation: fadeUp 0.8s ease forwards 0.25s;
+    }
+
+    .subtitle {
+      font-style: italic;
+      font-size: 0.95rem;
+      color: var(--gold);
+      margin-top: 0.7rem;
+      opacity: 0;
+      animation: fadeUp 0.8s ease forwards 0.4s;
+    }
+
+    .divider {
+      width: 40px; height: 1px;
+      background: linear-gradient(to right, transparent, var(--gold-dim), transparent);
+      margin: 2.5rem 0;
+      opacity: 0;
+      animation: fadeUp 0.8s ease forwards 0.55s;
+    }
+
+    ul.items {
+      list-style: none;
+      opacity: 0;
+      animation: fadeUp 0.8s ease forwards 0.7s;
+    }
+    ul.items li { border-bottom: 1px solid rgba(255,255,255,0.05); }
+    ul.items li:first-child { border-top: 1px solid rgba(255,255,255,0.05); }
+
+    ul.items li a {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.95rem 0;
+      font-size: clamp(0.88rem, 2vw, 0.98rem);
+      font-weight: 300;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.4s ease, padding-left 0.4s ease;
+      gap: 1rem;
+    }
+
+    ul.items li a:hover { color: var(--white); padding-left: 0.6rem; }
+
+    ul.items li a .arrow {
+      font-size: 0.75rem;
+      color: var(--gold-dim);
+      opacity: 0;
+      transition: opacity 0.4s ease, color 0.4s ease;
+      flex-shrink: 0;
+    }
+
+    ul.items li a:hover .arrow { opacity: 1; color: var(--gold); }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(14px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .back, h1, .subtitle, .divider, ul.items { animation: none; opacity: 1; }
+    }
+
+    @media (max-width: 480px) { body { padding: 3.5rem 1.5rem 5rem; } }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <a href="teaching.html" class="back">Teaching</a>
+
+    <h1>YouTube Lectures</h1>
+    <p class="subtitle">For anyone, anywhere.</p>
+
+    <div class="divider"></div>
+
+    <ul class="items">
+      <li>
+        <a href="https://www.youtube.com/watch?v=mm0xkW0Qs_I" target="_blank" rel="noopener">
+          <span>When caps complicate</span>
+          <span class="arrow">↗</span>
+        </a>
+      </li>
+    </ul>
+
+  </div>
+</body>
+</html>
