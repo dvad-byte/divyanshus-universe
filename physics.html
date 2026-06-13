@@ -28,8 +28,8 @@
     body {
       background-color: var(--bg);
       background-image: url('physics-bg.jpg');
-      background-size: cover;
-      background-position: center 20%;
+      background-size: contain;
+      background-position: center bottom;
       background-repeat: no-repeat;
       background-attachment: fixed;
       color: var(--white);
@@ -76,7 +76,7 @@
       font-weight: 400;
       letter-spacing: 0.18em;
       text-transform: uppercase;
-      color: var(--gold-dim);
+      color: #e8c86a;
       text-decoration: none;
       margin-bottom: 3.5rem;
       transition: color 0.4s ease;
@@ -125,12 +125,11 @@
     }
 
     ul.works li {
-      border-bottom: 1px solid rgba(255,255,255,0.05);
+      border-bottom: 1px solid rgba(255,255,255,0.12);
     }
 
-    ul.works li:first-child {
-      border-top: 1px solid rgba(255,255,255,0.05);
-    }
+    ul.works li { border-bottom: 1px solid rgba(255,255,255,0.12); }
+    ul.works li:first-child { border-top: 1px solid rgba(255,255,255,0.12); }
 
     ul.works li a {
       display: flex;
@@ -139,28 +138,28 @@
       padding: 1.1rem 0;
       font-size: clamp(0.9rem, 2vw, 1rem);
       font-weight: 300;
-      color: var(--muted);
+      color: rgba(232, 228, 220, 0.75);
+      text-shadow: 0 1px 8px rgba(0,0,0,0.9);
       text-decoration: none;
       transition: color 0.4s ease, padding-left 0.4s ease;
       gap: 1rem;
     }
 
     ul.works li a:hover {
-      color: var(--white);
+      color: #ffffff;
       padding-left: 0.6rem;
     }
 
     ul.works li a .arrow {
       font-size: 0.75rem;
-      color: var(--gold-dim);
+      color: #e8c86a;
       opacity: 0;
-      transition: opacity 0.4s ease, color 0.4s ease;
+      transition: opacity 0.4s ease;
       flex-shrink: 0;
     }
 
     ul.works li a:hover .arrow {
       opacity: 1;
-      color: var(--gold);
     }
 
     @keyframes fadeUp {
