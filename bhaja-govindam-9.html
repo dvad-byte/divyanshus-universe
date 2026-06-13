@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bhaja Govindam — Verse 9 — Divyanshu's Universe</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&family=Inter:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:       #0d0d14;
+      --gold:     #c9a84c;
+      --gold-dim: #7a6130;
+      --white:    #e8e4dc;
+      --muted:    #6b6878;
+    }
+
+    html, body { min-height: 100%; }
+
+    body {
+      background-color: var(--bg);
+      background-image: url('spirituality-bg.jpg');
+      background-size: cover;
+      background-position: center 20%;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      color: var(--white);
+      font-family: 'Inter', sans-serif;
+      font-weight: 300;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      overflow-x: hidden;
+      padding: 5rem 2rem 7rem;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(6, 4, 10, 0.80) 0%,
+        rgba(6, 4, 10, 0.72) 40%,
+        rgba(6, 4, 10, 0.88) 100%
+      );
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    body::after { display: none; }
+
+    .container {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      max-width: 680px;
+    }
+
+    /* Back link */
+    .back {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.72rem;
+      font-weight: 400;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold-dim);
+      text-decoration: none;
+      margin-bottom: 3.5rem;
+      transition: color 0.4s ease;
+      opacity: 0;
+      animation: fadeUp 0.8s ease forwards 0.1s;
+    }
+    .back:hover { color: var(--gold); }
+    .back::before { content: '←'; font-size: 0.85rem; }
+
+    /* Page title */
+    h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(1.4rem, 4vw, 2rem);
+      font-weight: 400;
+      color: #ffffff;
+      letter-spacing: -0.01em;
+      line-height: 1.2;
+      text-shadow: 0 2px 20px rgba(0,0,0,0.8);
+      opacity: 0;
+      animation: fadeUp 0.8s ease forwards 0.25s;
+    }
+
+    .subtitle {
+      font-style: italic;
+      font-size: 0.88rem;
+      color: #e8c86a;
+      margin-top: 0.5rem;
+      text-shadow: 0 1px 10px rgba(0,0,0,0.9);
+      opacity: 0;
+      animation: fadeUp 0.8s ease forwards 0.4s;
+    }
+
+    /* Divider */
+    .divider {
+      width: 40px;
+      height: 1px;
+      background: linear-gradient(to right, transparent, var(--gold-dim), transparent);
+      margin: 2rem 0;
+      opacity: 0;
+      animation: fadeUp 0.8s ease forwards 0.5s;
+    }
+
+    /* Verse block */
+    .verse-block {
+      opacity: 0;
+      animation: fadeUp 0.8s ease forwards 0.6s;
+      margin-bottom: 2.5rem;
+      padding: 1.8rem 2rem;
+      border-left: 2px solid var(--gold-dim);
+      background: rgba(0,0,0,0.25);
+      border-radius: 0 4px 4px 0;
+    }
+
+    .verse-sanskrit {
+      font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+      line-height: 2;
+      color: #ffffff;
+      text-shadow: 0 1px 8px rgba(0,0,0,0.8);
+      margin-bottom: 1.4rem;
+    }
+
+    .verse-transliteration {
+      font-style: italic;
+      font-size: clamp(0.88rem, 2vw, 1rem);
+      line-height: 2;
+      color: #e8c86a;
+      text-shadow: 0 1px 8px rgba(0,0,0,0.8);
+      margin-bottom: 1.4rem;
+    }
+
+    .verse-translation {
+      font-size: clamp(0.85rem, 1.8vw, 0.95rem);
+      line-height: 1.9;
+      color: rgba(232, 228, 220, 0.75);
+      text-shadow: 0 1px 8px rgba(0,0,0,0.8);
+    }
+
+    .verse-translation em {
+      color: #e8c86a;
+      font-style: normal;
+    }
+
+    /* Refrain */
+    .refrain {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.82rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold);
+      text-shadow: 0 1px 8px rgba(0,0,0,0.9);
+      margin-top: 1.2rem;
+    }
+
+    /* Commentary */
+    .commentary {
+      opacity: 0;
+      animation: fadeUp 0.8s ease forwards 0.8s;
+    }
+
+    .commentary-label {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gold-dim);
+      margin-bottom: 1.4rem;
+    }
+
+    .commentary p {
+      font-size: clamp(0.92rem, 2vw, 1.02rem);
+      line-height: 1.95;
+      color: rgba(232, 228, 220, 0.88);
+      text-shadow: 0 1px 6px rgba(0,0,0,0.7);
+      margin-bottom: 1.3rem;
+    }
+
+    .commentary p:last-child { margin-bottom: 0; }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(14px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .back, h1, .subtitle, .divider, .verse-block, .commentary {
+        animation: none; opacity: 1;
+      }
+    }
+
+    @media (max-width: 480px) {
+      body { padding: 3.5rem 1.5rem 5rem; }
+      .verse-block { padding: 1.2rem 1.2rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <a href="bhaja-govindam.html" class="back">Bhaja Govindam</a>
+
+    <h1>Bhaja Govindam — Verse 9</h1>
+    <p class="subtitle">Ādi Śaṅkarācārya</p>
+
+    <div class="divider"></div>
+
+    <div class="verse-block">
+
+      <div class="verse-sanskrit">
+        सत्सङ्गत्वे निःसङ्गत्वम्<br>
+        निःसङ्गत्वे निर्मोहत्वम्<br>
+        निर्मोहत्वे निश्चलतत्त्वम्<br>
+        निश्चलतत्त्वे जीवन्मुक्तिः
+      </div>
+
+      <div class="verse-transliteration">
+        Satsaṅgatve niḥsaṅgatvam<br>
+        Niḥsaṅgatve nirmohatvam<br>
+        Nirmohatve niścalatattvam<br>
+        Niścalatatve jīvanmuktiḥ
+      </div>
+
+      <div class="verse-translation">
+        From <em>satsaṅga</em> (company of the wise) comes <em>niḥsaṅgatva</em> (non-attachment);<br>
+        From non-attachment comes <em>nirmohatva</em> (freedom from delusion);<br>
+        From freedom from delusion comes <em>niścalatatva</em> (steadiness of mind);<br>
+        From steadiness of mind comes <em>jīvanmuktiḥ</em> (liberation while living).
+      </div>
+
+      <div class="refrain">Bhaja Govindam, Bhaja Govindam</div>
+
+    </div>
+
+    <div class="commentary">
+      <p class="commentary-label">Commentary</p>
+
+      <p>We are all attached to something or the other. Desire is always present. It is what tethers us to the world. So it does not do well to try to overcome it. Overcoming, or completely letting go of it, eventually leads to alienation. Śaṅkarācārya offers a beautiful solution to this problem. He says that attach yourself to what is infinite. So for example, when in the world, we use <em>sevā</em> as a medium to stay connected to the infinite, while living at the scale of the finite. That eventually leads to stronger attachment with what is the Truth. And elegantly, this also resolves the apparent paradox of staying in the world while remaining perfectly detached. <em>Sevā</em> is a means to not just detach, but attach oneself to the Infinite even during mundane affairs, so that detachment is a natural consequence. And attachment to the Infinite Truth is what matters; the objective realities are ultimately pleasurably pointless through their impermanence. <em>Sevā</em> allows one to live with this as a moment to moment reality. A beautifully engineered mechanism to act in the finite, transient and often hollow or hostile world, while remaining in and remaining with the Infinite, Absolute Truth, and acting with utter love, compassion and creativity.</p>
+
+      <p>And this constant presence and attachment to the Truth is liberation: <em>Niścalatatve jīvanmuktiḥ</em>. Therefore, Bhaja Govindam Bhaja Govindam. (Serve Govind, Serve Govind)</p>
+
+      <p>A beautiful verse that is a direct attack on <em>sevā</em> as an "emotional" thing. It is a very conscious, very deliberate, almost engineered way towards a concrete purpose of <em>niścalatatvam</em>. And through that <em>niścalatatvam</em>, attaining <em>jīvanmukti</em>.</p>
+    </div>
+
+  </div>
+</body>
+</html>
