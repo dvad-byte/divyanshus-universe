@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Will of Him — Divyanshu Vadehra</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --ink:        #1c1a17;
+      --ink-faint:  #5a5040;
+      --parchment:  #f7f3ec;
+      --gold-dim:   #b89a5e;
+      --pivot-gray: #8a7f72;
+    }
+
+    html {
+      background: var(--parchment);
+      color: var(--ink);
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 18px;
+      line-height: 1.75;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 4rem 1.5rem 6rem;
+    }
+
+    /* ── Page wrapper ── */
+    .page {
+      max-width: 520px;
+      width: 100%;
+    }
+
+    /* ── Eyebrow ── */
+    .eyebrow {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.72rem;
+      font-weight: 400;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold-dim);
+      margin-bottom: 2.8rem;
+    }
+
+    /* ── Title ── */
+    h1 {
+      font-family: 'IM Fell English', serif;
+      font-size: clamp(2rem, 6vw, 3rem);
+      font-weight: 400;
+      line-height: 1.15;
+      color: var(--ink);
+      margin-bottom: 0.3rem;
+      letter-spacing: 0.01em;
+    }
+
+    .title-rule {
+      width: 2.4rem;
+      height: 1px;
+      background: var(--gold-dim);
+      margin-bottom: 3rem;
+    }
+
+    /* ── Stanza ── */
+    .stanza {
+      margin-bottom: 2.6rem;
+    }
+
+    .stanza p {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.08rem;
+      font-weight: 300;
+      font-style: italic;
+      line-height: 1.85;
+      color: var(--ink);
+    }
+
+    /* ── Pivot line — the signature element ── */
+    .pivot {
+      margin: 2.8rem 0;
+      text-align: center;
+    }
+
+    .pivot p {
+      font-family: 'IM Fell English', serif;
+      font-size: 1.05rem;
+      font-style: italic;
+      font-weight: 400;
+      color: var(--pivot-gray);
+      letter-spacing: 0.04em;
+    }
+
+    /* ── Him-list stanza ── */
+    .him-list {
+      margin-bottom: 0;
+    }
+
+    .him-list p {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.08rem;
+      font-weight: 300;
+      font-style: italic;
+      line-height: 1.85;
+      color: var(--ink);
+    }
+
+    /* ── Closing chiasm ── */
+    .closing {
+      margin-top: 2.2rem;
+      padding-top: 1.6rem;
+      border-top: 1px solid #d9d0c2;
+    }
+
+    .closing p {
+      font-family: 'IM Fell English', serif;
+      font-size: 1.08rem;
+      font-style: italic;
+      color: var(--ink);
+      line-height: 1.9;
+    }
+
+    .closing p:last-child {
+      color: var(--ink-faint);
+      letter-spacing: 0.02em;
+    }
+
+    /* ── Byline ── */
+    .byline {
+      margin-top: 3.8rem;
+      font-size: 0.78rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold-dim);
+    }
+
+    /* ── Fade-in on load ── */
+    @media (prefers-reduced-motion: no-preference) {
+      .page {
+        opacity: 0;
+        transform: translateY(10px);
+        animation: arise 1.1s ease forwards;
+        animation-delay: 0.15s;
+      }
+
+      @keyframes arise {
+        to { opacity: 1; transform: translateY(0); }
+      }
+    }
+
+    /* ── Mobile ── */
+    @media (max-width: 480px) {
+      body { padding: 3rem 1.2rem 5rem; }
+      .stanza p, .him-list p, .closing p { font-size: 1rem; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+
+    <p class="eyebrow">Divyanshu Vadehra</p>
+
+    <h1>Will of Him</h1>
+    <div class="title-rule"></div>
+
+    <div class="stanza">
+      <p>Cognized the injustices by the man, asked Him "Why?"</p>
+      <p>Heard the wails of the woman afar, asked Him "Why?"</p>
+      <p>Felt the weight of chain unwanted, asked Him "Why?"</p>
+    </div>
+
+    <div class="pivot">
+      <p>Smiling, He showed</p>
+    </div>
+
+    <div class="him-list stanza">
+      <p>Him in Duryodhan</p>
+      <p>Him in Paanchali</p>
+      <p>Him in the arrow of the wicked</p>
+      <p>And Him in the bow of Arjun</p>
+    </div>
+
+    <div class="closing">
+      <p>Him in Kurukshetra</p>
+      <p>Kurukshetra in Him.</p>
+    </div>
+
+
+
+  </main>
+</body>
+</html>
